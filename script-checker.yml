@@ -1,0 +1,11 @@
+name: play-with-actions
+
+on: [push]
+
+jobs:
+  run-bats-on-script:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "pre-checkout" && ls -lah && pwd
+      - uses: actions/checkout@v3
+      - run: echo "post-checkout" && ls -lah && pwd
