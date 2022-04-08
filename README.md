@@ -33,3 +33,12 @@
     - Once this was finished, I ran `docker build -t my-apache2 .` while I was in the main directory of my project repository, which was the parent directory of the `public-html` folder. When this command was run, the HTML file from the `public-html` directory was copied onto the new container being built since this was specified inside the `Dockerfile`. This could be copied from another directory, it would just have to be specified inside the `Dockerfile`.
     - After the container was built, I ran `docker run -dit --name my-running-app -p 8080:80 my-apache2` to run the container and bind it to port 8080 on localhost.
     - Once the container was running, I was able to view the project webpage in a browser by going to http://localhost:8080/. Since the IP address for localhost is "127.0.0.1", http://127.0.0.1:8080 could also be typed in on my computer to access the webpage since localhost refers to "127.0.0.1". Also, the ":8080" at the end of the URL that is being typed in is to specify to the browser to look on port 8080 for the content since that is what port the website was bound to when the container was run.
+
+    ## Part 2 - GitHub Actions and DockerHub
+
+    - Create DockerHub public repo: 
+        - Process to create: I went to the [DockerHub website](https://hub.docker.com/) and created a free account.
+        - Then, I clicked on "Repositories" > "Create Repository". 
+        - After this, I typed in the name I wanted to give my repo, which was "ceg3120-mysite". 
+        - Also, I needed to choose the visibility of the repo, and I could choose from a public or private repo. Private repos cost money, and     DockerHub only allows one free private repo, so I made mine public.
+        - I clicked the "Create" button once I specified all of these settings.
