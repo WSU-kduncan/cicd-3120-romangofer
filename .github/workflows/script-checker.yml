@@ -1,16 +1,9 @@
-name: play-with-actions
+name: Docker Image Publisher
 
-#on: [push]
-on:
-  schedule:
-    - cron: '20 14 * * *'
-  push:
-    branches: [master]
-    tags:
-      - 'v*.*.*'
+on: [push]
 
 env:
-  DOCKER_REPO: mysite
+  DOCKER_REPO: ceg3120-mysite
 
 jobs:
   docker-build-push:
@@ -18,7 +11,7 @@ jobs:
     steps:
       - name: checking out repo
         uses: actions/checkout@v3
-      - run: echo "post-checkout" && ls -lah && pwd
+     # - run: echo "post-checkout" && ls -lah && pwd
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v3
