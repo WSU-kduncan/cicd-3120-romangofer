@@ -42,3 +42,21 @@
         - After this, I typed in the name I wanted to give my repo, which was "ceg3120-mysite". 
         - Also, I needed to choose the visibility of the repo, and I could choose from a public or private repo. Private repos cost money, and     DockerHub only allows one free private repo, so I made mine public.
         - I clicked the "Create" button once I specified all of these settings.
+    - Allow DockerHub authentication via CLI using Dockhub credentials:
+        - To login to push to DockerHub, the `docker login` command needs to be used. There are different ways to use this command. The way that I used this is I ran `docker login -u MYUSERNAME`. In this command, the `-u` flag means the DockerHub account username for the desired account to sign into is being specified. When I ran this, it asked for my DockerHub password, which I typed in and then hit "Enter".
+        - After a few seconds, the screen said "Login Succeeded" and explains how logging in with the password grants the terminal complete access to my account. Also, it recommends logging in with a personal access token for better security.
+        - Another option to login with Docker is to provide both the username and password in the same line. For example, `docker login -u USERNAME -p PASSWORD` can be run instead of entering the password separately. This is insecure, but it could be done. However, the better option to login with one line is to login using standard input. To do this, the following command could be run: `cat dockerhub-password.txt | docker login --username USERNAME --password-stdin`. This pipes the output of doing `cat` on a file with the DockerHub password stored in it to the docker login command and tells the system to use this for the password.
+    - Configure GitHub Secrets:
+        - To store DockerHub credentials as Secrets on GitHub, the username and password for DockerHub will be needed.
+        - To set these credentials as Secrets and give them a name to refer to, the user will need to go online and sign into their GitHub account.
+        - Once this is done, the user will need to click on the repository they want to set secrets for.
+        - After this, they will need to click "Settings", scroll down to "Security" on the left side of the webpage, click on "Secrets" in the "Security" section, and then click on "Actions".
+        - On the screen where it says "Actions secrets", click "New repository secret"
+        - After clicking this, the GitHub website will display a screen where a secret can be given a name to refer to.
+        - The username and password will need to be added as separate secrets, I named mine for the username "DOCKER_USERNAME" and "DOCKER_TOKEN" for my password secret. This security token can be generated and used instead of password authentication, which I chose to setup.
+        - In the "Value" box, insert the DockerHub username for the username secret, and either the security token or the password for the password secret into the box.
+        - Once this is finished, click the green "Add secret" box.
+        - After this, the Secrets can be viewed on the "Actions secrets" page, where information such as how long ago the secrets were created will be displayed.
+        - To refer to this secret in a workflow file, just put "${{ secrets.SECRET_NAME }}" instead of the username or password itself.
+    - Configure GitHub Workflow:
+        - Variables to change: there are a number of important variables to change in a workflow file, such as which DockerHub repo should be connected to, and the version tags for the image being built and pushed.
