@@ -21,7 +21,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v2
         with:
-          images: romangofer/ceg3120-mysite
+          images: romangofer/ceg3120-mysite:v1
       
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
