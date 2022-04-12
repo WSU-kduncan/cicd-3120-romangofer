@@ -34,7 +34,7 @@ jobs:
       - name: build and push
         uses: docker/build-push-action@v2
         with:
-           tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ steps.meta.outputs.tags }}
           #tags: ${{ secrets.DOCKER_USERNAME }}/${{ env.DOCKER_REPO }}:latest,${{ secrets.DOCKER_USERNAME }}/${{ env.DOCKER_REPO }}:2.0
           #labels: ${{ steps.meta.outputs.labels }} 
          # push: true
