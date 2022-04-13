@@ -4,10 +4,12 @@ on: [push]
 
 env:
   DOCKER_REPO: ceg3120-mysite
+  
 push:
     branches: [master]
     tags:
       - 'v*.*.*'
+        
 jobs:
   docker-build-push:
     runs-on: ubuntu-latest
