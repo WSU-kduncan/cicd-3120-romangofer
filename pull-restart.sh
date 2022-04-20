@@ -1,6 +1,6 @@
 #! /bin/bash
 # pull docker image
-docker pull romangofer/site2:latest
+docker pull romangofer/ceg3120-mysite:latest
 # kill old running container (to clear host port)
 #docker kill *
 docker stop cheese
