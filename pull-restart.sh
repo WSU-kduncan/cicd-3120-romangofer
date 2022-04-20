@@ -4,9 +4,9 @@ docker pull romangofer/site2:latest
 # kill old running container (to clear host port)
 #docker kill *
 docker stop cheese
-docker system prune -f
+docker system prune -f -a
 
 # pull image post prune
-docker pull romangofer/site2:latest
+docker pull romangofer/ceg3120-mysite:latest
 # run new image
-docker run -d --name cheese --rm -p 80:80 romangofer/site2:latest
+docker run -d --name cheese -p 80:80 romangofer/ceg3120-mysite:latest
