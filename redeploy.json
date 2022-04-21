@@ -6,7 +6,7 @@
 		"and": [
 			{
 				"match": {
-					"type": "payload-hash-sha1",
+					"type": "payload-hash-sha256",
 				        "secret": "chicken",
 					"parameter": {
 						"source": "header",
