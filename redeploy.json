@@ -10,8 +10,8 @@
                                         "type": "value",
                                         "value": "chicken",					
 					"parameter": {
-						"source": "url",
-						"name": "GET-PARAM"
+						"source": "payload-hash-sha1",
+						"name": "X-Hub-Signature"
 					}
 				}
 			}
