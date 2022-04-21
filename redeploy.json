@@ -6,11 +6,11 @@
 		"and": [
 			{
 				"match": {
-					"type": "payload-hash-sha256",
-				        "secret": "chicken",
+				
+				      
 					"parameter": {
-						"source": "header",
-						"name": "X-Hub-Signature"
+						"source": "url",
+						"name": "GET-PARAM"
 					}
 				}
 			}
