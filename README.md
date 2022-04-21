@@ -78,7 +78,7 @@
     - There was also the option to specify a `"secret"`, which is a way of authenticating with a GitHub webhook since a secret phrase can be set when creating a GitHub webhook.
     - The "parameter" section specifies that this hash should be in the header of each payload request as `X-Hub-Signature`.
     - This is what the file ended up looking like:
-    -[screenshot of redeploy](redeploy.PNG)
+    - ![screenshot of redeploy](redeploy.PNG)
 
 - Setting up a webhook on the server:
     - How I created my own listener: To do this I installed `webhook` on a Ubuntu 20.04 instance by running `sudo apt install webhook`.
@@ -97,3 +97,4 @@
     - Port 9000 needed to be specified in the URL
     - After I committed and pushed with a tag, my workflow ran, and the hook picked up the push.
     - After this, the hook ran the new Docker image, and I could go to my server's public IP address and look at my newly-updated website content
+    - When I looked on GitHub and DockerHub, both places said that the hooks ran successfully.
