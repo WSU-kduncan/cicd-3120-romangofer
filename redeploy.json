@@ -1,7 +1,7 @@
 [
  {	"id": "redeploy",
  	"execute-command": "/home/ubuntu/cicd-3120-romangofer/pull-restart.sh",
-	"command-working-directory": "/var/webhook",
+
 	"trigger-rule": {
 		"and": [
 			{
