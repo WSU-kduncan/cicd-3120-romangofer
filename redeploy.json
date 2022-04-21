@@ -8,7 +8,7 @@
 				"match": {
 				
                                         "type": "payload-hash-sha1",
-                                        "value": "chicken",					
+                                        "secret": "chicken",					
 					"parameter": {
 						"source": "header",
 						"name": "X-Hub-Signature"
