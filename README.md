@@ -98,3 +98,9 @@
     - After I committed and pushed with a tag, my workflow ran, and the hook picked up the push.
     - After this, the hook ran the new Docker image, and I could go to my server's public IP address and look at my newly-updated website content
     - When I looked on GitHub and DockerHub, both places said that the hooks ran successfully.
+
+## Part 4 - Diagramming
+
+Below is my diagram:
+
+![Project 5 diagram](CEG-3120-Project-5-Diagram.jpg)
